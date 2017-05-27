@@ -18,25 +18,25 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/")
-public class BookController {
+public class ReadingListController {
     @Autowired
     private BookRepository bookRepository;
     private List<Book> readingList = new ArrayList<>();
-    @RequestMapping(value = "/{author}", method = RequestMethod.GET)
-    public String readersBooks(@PathVariable("author") String author, Model model) {
+    @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
+    public String readersBooks(@PathVariable("reader") String reader, Model model) {
 
-        readingList = bookRepository.findByAuthor(author);
+        readingList = bookRepository.findByReader(reader);
         if (readingList != null) {
             model.addAttribute("books", readingList);
         }
         return "readingList";
     }
 
-    @RequestMapping(value = "/author", method = RequestMethod.POST)
-    public String addToReadingList(Book book) {
-
+    @RequestMapping(value = "/{reader}", method = RequestMethod.POST)
+    public String addToReadingList(@PathVariable("reader") String reader, Book book) {
+        book.setReader(reader);
         bookRepository.save(book);
-        return "redirect:/author";
+        return "redirect:/{reader}";
 
     }
 }

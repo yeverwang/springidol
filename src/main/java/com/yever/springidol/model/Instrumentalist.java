@@ -4,9 +4,11 @@ import com.yever.springidol.api.Instrument;
 import com.yever.springidol.api.Performer;
 import com.yever.springidol.exception.PerformanceException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resources;
@@ -15,6 +17,7 @@ import javax.annotation.Resources;
  * Created by yeverwang on 2017/5/22.
  */
 @Component
+@Qualifier("repo")
 public class Instrumentalist implements Performer {
     @Value("${song}")
     private String song ;

@@ -16,7 +16,7 @@ public class SpringidolApplicationTests {
 	@Qualifier("poemJuggler")
 	private Performer performer;
 	@Autowired
-	@Qualifier("instrumentalist")
+	@Qualifier("repo")
 	private Performer performeranother;
 
 	@Test

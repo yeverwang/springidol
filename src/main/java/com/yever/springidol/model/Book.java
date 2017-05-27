@@ -14,17 +14,15 @@ public class Book {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String reader;
+
+    private String isbn;
+
+    private String title;
 
     private String author;
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+    private String description;
 
     public Long getId() {
         return id;
@@ -34,20 +32,43 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getReader() {
+        return reader;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setReader(String reader) {
+        this.reader = reader;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                '}';
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

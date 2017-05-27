@@ -10,6 +10,6 @@ import org.springframework.stereotype.Component;
 public class Sax implements Instrument {
     @Override
     public void play() {
-            System.out.println("TOOT TOOT");
+            System.out.println(Sax.class.getName()+"TOOT TOOT");
     }
 }

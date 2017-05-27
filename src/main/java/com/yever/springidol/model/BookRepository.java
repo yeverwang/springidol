@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by ASUS on 2017/5/22.
  */
-@Repository
+
 public interface BookRepository extends JpaRepository<Book,Long> {
-    List<Book> findByAuthor(String author);
+    List<Book> findByReader(String author);
 }
